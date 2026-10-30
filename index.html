@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Karthik MS, Java backend developer with 2+ years of experience in Spring Boot, REST APIs, PostgreSQL and microservices.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+<title>Karthik MS – Java Backend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0E6D2; --surface:#FAF5EA; --ink:#241E14; --muted:#5F5543; --accent:#1F4FA8; --line:#D9CCB3; --code-bg:#E6DAC2;
+  --key:#1F4FA8; --str:#7A4A0A; --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Public Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1A1611;--surface:#241E17;--ink:#F0E8D8;--muted:#B3A78F;--accent:#7FA8F0;--line:#3A3126;--code-bg:#120F0B;--key:#7FA8F0;--str:#E0B66A;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#1A1611;--surface:#241E17;--ink:#F0E8D8;--muted:#B3A78F;--accent:#7FA8F0;--line:#3A3126;--code-bg:#120F0B;--key:#7FA8F0;--str:#E0B66A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--body)}
+a{color:var(--accent)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.5rem}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.55rem}
+.brand{font:700 1.1rem var(--display);color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.links{display:flex;gap:.2rem;overflow-x:auto;flex:1;justify-content:flex-end;scrollbar-width:none}
+.links a{color:var(--muted);text-decoration:none;font-weight:500;padding:.4rem .75rem;border-radius:6px;white-space:nowrap}
+.links a:hover{color:var(--ink)}
+.links a.on{color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent)}
+.icon-btn{flex:none;width:2.4rem;height:2.4rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;font-size:1.1rem;cursor:pointer}
+.icon-btn:hover{border-color:var(--accent)}
+.icon-btn:focus-visible,button.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .85rem;border:1px solid var(--line);border-radius:99px;font-size:.88rem;color:var(--muted);background:var(--surface);margin-bottom:1.2rem}
+.dot{width:.55rem;height:.55rem;border-radius:50%;background:#2F9E62}
+.stats{display:flex;gap:2.25rem;flex-wrap:wrap;margin-top:2.25rem}
+.stats b{display:block;font:700 1.7rem/1.1 var(--display)}
+.stats span{color:var(--muted);font-size:.88rem}
+button.btn{font:inherit;font-weight:600;cursor:pointer;background:none}
+.proj{transition:border-color .2s}
+.proj:hover{border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips span{padding:.25rem .7rem;background:var(--surface);border:1px solid var(--line);border-radius:6px;font-size:.9rem;color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.6rem 1rem;border-radius:8px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.toast.show{opacity:1}
+.dl[hidden]{display:none}
+.totop{position:fixed;right:1.25rem;bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));width:2.9rem;height:2.9rem;border-radius:50%;border:1px solid var(--accent);background:var(--accent);color:var(--bg);font-size:1.3rem;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s;z-index:25}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.tags li{transition:background .15s,color .15s,border-color .15s}
+.tags li:hover{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){pre.api{animation:rise .7s ease-out both}}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center;padding:3.5rem 0 4rem}
+h1{font:700 clamp(2.6rem,6vw,4.4rem)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 1.1rem}
+.lead{font-size:1.15rem;color:var(--muted);max-width:34rem;margin:0 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.ghost{color:var(--accent)}
+pre.api{margin:0;background:var(--code-bg);border:1px solid var(--line);border-radius:10px;padding:1.25rem 1.4rem;font:400 .88rem/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto;color:var(--ink)}
+.api .req{color:var(--muted)} .api .k{color:var(--key)} .api .s{color:var(--str)}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+h2{font:700 1.9rem/1.2 var(--display);letter-spacing:-.02em;margin:0 0 1.75rem}
+h3{font:600 1.1rem/1.3 var(--display);margin:0 0 .25rem}
+.meta{color:var(--muted);font-size:.92rem;margin:0 0 .75rem}
+ul{margin:.5rem 0 0;padding-left:1.15rem} li{margin:.3rem 0;max-width:68ch}
+.role{margin-bottom:2rem}
+.stint{border-left:3px solid var(--accent);padding-left:1.25rem;margin:1.5rem 0}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+.proj.small{padding:1.1rem 1.4rem}
+.proj.small p{margin:.25rem 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .5rem;padding:0;list-style:none}
+.tags li{margin:0;font-size:.8rem;padding:.15rem .55rem;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+dl{display:grid;grid-template-columns:11rem 1fr;gap:.9rem 1.5rem;margin:0}
+dt{font-weight:600} dd{margin:0;color:var(--muted)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:2rem;padding-top:2rem}
+  .projects{grid-template-columns:1fr}
+  dl{grid-template-columns:1fr;gap:.2rem}
+  dd{margin-bottom:.8rem}
+}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap barin">
+<a class="brand" href="#top">Karthik MS</a>
+<nav class="links" aria-label="Sections"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a><a href="https://github.com/karthikmsk" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/karthik-ms-b52844152/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
+<button class="icon-btn" id="theme" type="button" aria-label="Switch theme">☾</button>
+</div></div>
+<div class="wrap" id="top">
+
+<header class="hero">
+  <div>
+    <p class="badge"><span class="dot" aria-hidden="true"></span>Open to new opportunities</p>
+    <h1>Karthik MS</h1>
+    <p class="lead">I’m a Java backend developer with two years of experience building REST APIs and microservices with Spring Boot and PostgreSQL. At the moment I’m building a rules engine that turns logistics contracts into business rules.</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Get in touch</a>
+      <a class="btn ghost" href="#projects">See my projects</a>
+      <a class="btn ghost" href="Karthik_MS_Resume.pdf" download>Download resume</a>
+    </div>
+    <div class="stats"><div><b>2+</b><span>years of experience</span></div><div><b>2</b><span>projects at Sonata</span></div><div><b>4</b><span>personal projects</span></div></div>
+  </div>
+  <pre class="api" aria-label="Summary shown as an API response"><span class="req">GET /developers/karthik-ms</span>
+{
+  <span class="k">"role"</span>: <span class="s">"Java Backend Developer"</span>,
+  <span class="k">"experience"</span>: <span class="s">"2+ years"</span>,
+  <span class="k">"company"</span>: <span class="s">"Sonata Software"</span>,
+  <span class="k">"stack"</span>: [<span class="s">"Java"</span>, <span class="s">"Spring Boot"</span>,
+            <span class="s">"PostgreSQL"</span>, <span class="s">"Docker"</span>],
+  <span class="k">"building"</span>: <span class="s">"Drools contract rules engine"</span>,
+  <span class="k">"location"</span>: <span class="s">"Karnataka, India"</span>,
+  <span class="k">"open_to"</span>: <span class="s">"new opportunities"</span>
+}</pre>
+</header>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="role">
+    <h3>Software Engineer, Sonata Software</h3>
+    <p class="meta">July 2024 to present</p>
+    <div class="stint">
+      <h3>Logistics Contract Rules Management System</h3>
+      <p class="meta">August 2025 to present · Java, Spring Boot, Drools, PostgreSQL, JUnit, Mockito</p>
+      <ul>
+        <li>Built backend services that convert logistics contract terms into configurable business rules using Drools.</li>
+        <li>Developed REST APIs to create, validate and apply contract-based rules.</li>
+        <li>Designed PostgreSQL entities and wrote optimized queries for rule retrieval.</li>
+        <li>Handled rule conflicts and contract changes with validation and exception handling.</li>
+        <li>Wrote unit tests with JUnit and Mockito and checked rules against real contract scenarios.</li>
+      </ul>
+    </div>
+    <div class="stint">
+      <h3>Employee Self-Service (ESS) Portal</h3>
+      <p class="meta">July 2024 to July 2025 · Java, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL</p>
+      <ul>
+        <li>Developed and maintained backend features for a company-internal self-service portal.</li>
+        <li>Built and integrated REST APIs and business logic across application modules.</li>
+        <li>Debugged defects and supported enhancements with development, testing and support teams.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <article class="proj">
+      <h3>Leave Management System</h3>
+      <ul class="tags"><li>Spring Boot</li><li>JPA</li><li>PostgreSQL</li><li>MapStruct</li><li>Docker</li></ul>
+      <ul>
+        <li>REST APIs for employees, leave types, balances and requests.</li>
+        <li>Apply, approve, reject and cancel flows, with validation of dates, balances and managers.</li>
+        <li>A central exception handler and notifications for leave decisions.</li>
+        <li>Tested with Postman.</li>
+      </ul>
+    </article>
+    <article class="proj">
+      <h3>Employee and User Management</h3>
+      <ul class="tags"><li>Spring Security</li><li>Eureka</li><li>API Gateway</li><li>Docker</li></ul>
+      <ul>
+        <li>User service REST APIs with authentication and authorization through Spring Security.</li>
+        <li>Service discovery with Eureka and request routing through an API Gateway.</li>
+        <li>Service-to-service communication and centralized exception handling.</li>
+        <li>Each service runs as a Docker container.</li>
+      </ul>
+    </article>
+    <article class="proj">
+      <h3>Bookstore Application</h3>
+      <ul class="tags"><li>Spring Boot</li><li>JPA</li><li>MySQL</li><li>Kafka</li><li>REST</li></ul>
+      <ul>
+        <li>Built REST endpoints to add, view, update and delete books.</li>
+        <li>Modeled book entities and used Spring Data JPA repositories for persistence in MySQL.</li>
+        <li>Structured the code into controller, service and repository layers.</li>
+        <li>Added validation and error handling for invalid or missing records.</li>
+        <li>Integrated Apache Kafka to publish and consume events for book operations.</li>
+        <li>Tested the APIs with Postman.</li>
+      </ul>
+    </article>
+    <article class="proj">
+      <h3>Event Management System</h3>
+      <ul class="tags"><li>Spring Boot</li><li>REST</li><li>JPA</li><li>PostgreSQL</li></ul>
+      <ul>
+        <li>Built RESTful services to create, view, update and delete events.</li>
+        <li>Modeled event data with JPA entities and stored it in PostgreSQL.</li>
+        <li>Structured the code into controller, service and repository layers.</li>
+        <li>Added validation and exception handling for invalid event details.</li>
+        <li>Tested the endpoints with Postman.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl>
+    <dt>Language</dt><dd class="chips"><span>Java</span><span>SQL</span></dd>
+    <dt>Backend</dt><dd class="chips"><span>Spring Boot</span><span>Spring MVC</span><span>Spring Data JPA</span><span>Spring Security</span><span>Hibernate</span><span>MapStruct</span><span>Drools</span><span>REST APIs</span></dd>
+    <dt>Microservices</dt><dd class="chips"><span>Eureka</span><span>API Gateway</span><span>Docker</span></dd>
+    <dt>Databases</dt><dd class="chips"><span>PostgreSQL</span><span>MySQL</span></dd>
+    <dt>Testing and tools</dt><dd class="chips"><span>JUnit</span><span>Mockito</span><span>Postman</span><span>Git</span><span>GitHub</span></dd>
+  </dl>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>I’m open to Java and Spring Boot backend roles. The fastest way to reach me is email.</p>
+  <p>karthikms207@gmail.com</p>
+  <div class="btns"><a class="btn primary" href="mailto:karthikms207@gmail.com">Email me</a><a class="btn ghost" href="https://www.linkedin.com/in/karthik-ms-b52844152/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="btn ghost" href="https://github.com/karthikmsk" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn ghost" href="Karthik_MS_Resume.pdf" download>Download resume</a></div>
+</section>
+
+<footer>© Karthik MS</footer>
+</div>
+<button class="totop" id="totop" type="button" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var root=document.documentElement,tb=document.getElementById('theme');
+  function cur(){return root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}
+  function label(){var d=cur()==='dark';tb.textContent=d?'☀':'☾';tb.setAttribute('aria-label',d?'Switch to light theme':'Switch to dark theme')}
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  label();
+  tb.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}label()});
+  var links=document.querySelectorAll('.links a');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('totop');
+  function sync(){b.classList.toggle('show',window.scrollY>400)}
+  window.addEventListener('scroll',sync,{passive:true});sync();
+  b.addEventListener('click',function(){window.scrollTo({top:0})});
+})();
+</script>
+</body>
+</html>
